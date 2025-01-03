@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Win32">
+      <UniqueIdentifier>{077906b2-b199-44e3-bdd8-087801c898fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Void">
+      <UniqueIdentifier>{41bf385d-2e58-44bc-8637-75cf0cdc10ca}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Win32\dllmain.cpp">
+      <Filter>Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32\wgl.cpp">
+      <Filter>Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32\Win32Utils.cpp">
+      <Filter>Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32\Win32wglContext.cpp">
+      <Filter>Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32\Win32Window.cpp">
+      <Filter>Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="glContext.cpp" />
+    <ClCompile Include="OpenGL.cpp" />
+    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="Win32\Win32Runtime.cpp">
+      <Filter>Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="PlatformSelector.cpp" />
+    <ClCompile Include="Runtime.cpp" />
+    <ClCompile Include="Win32\WglLoader.cpp">
+      <Filter>Win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Win32\wgl.h">
+      <Filter>Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32\Win32Utils.h">
+      <Filter>Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32\Win32wglContext.h">
+      <Filter>Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32\Win32Window.h">
+      <Filter>Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="glContext.h" />
+    <ClInclude Include="glDefines.h" />
+    <ClInclude Include="glLoader.h" />
+    <ClInclude Include="glTypes.h" />
+    <ClInclude Include="OpenGL.h" />
+    <ClInclude Include="Types.h" />
+    <ClInclude Include="Window.h" />
+    <ClInclude Include="Runtime.h" />
+    <ClInclude Include="WindowInternal.h" />
+    <ClInclude Include="Win32\wglTypes.h">
+      <Filter>Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32\Win32Runtime.h">
+      <Filter>Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="PlatformSelector.h" />
+    <ClInclude Include="Win32\WglLoader.h">
+      <Filter>Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="glContextInternal.h" />
+  </ItemGroup>
+</Project>

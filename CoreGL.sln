@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoreGL", "CoreGL\CoreGL.vcxproj", "{4E2E9F4B-04C1-46D4-9638-E70E00B39C5B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CoreGLTest", "CoreGLTest\CoreGLTest.vcxproj", "{93F5EF81-0064-43C2-BC71-55139DCCFBF4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4E2E9F4B-04C1-46D4-9638-E70E00B39C5B} = {4E2E9F4B-04C1-46D4-9638-E70E00B39C5B}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{DC7FA295-E3D7-4511-9444-BF19DE21CAC0}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E2E9F4B-04C1-46D4-9638-E70E00B39C5B}.Debug|x64.ActiveCfg = Debug|x64
+		{4E2E9F4B-04C1-46D4-9638-E70E00B39C5B}.Debug|x64.Build.0 = Debug|x64
+		{4E2E9F4B-04C1-46D4-9638-E70E00B39C5B}.Debug|x86.ActiveCfg = Debug|Win32
+		{4E2E9F4B-04C1-46D4-9638-E70E00B39C5B}.Debug|x86.Build.0 = Debug|Win32
+		{4E2E9F4B-04C1-46D4-9638-E70E00B39C5B}.Release|x64.ActiveCfg = Release|x64
+		{4E2E9F4B-04C1-46D4-9638-E70E00B39C5B}.Release|x64.Build.0 = Release|x64
+		{4E2E9F4B-04C1-46D4-9638-E70E00B39C5B}.Release|x86.ActiveCfg = Release|Win32
+		{4E2E9F4B-04C1-46D4-9638-E70E00B39C5B}.Release|x86.Build.0 = Release|Win32
+		{93F5EF81-0064-43C2-BC71-55139DCCFBF4}.Debug|x64.ActiveCfg = Debug|x64
+		{93F5EF81-0064-43C2-BC71-55139DCCFBF4}.Debug|x64.Build.0 = Debug|x64
+		{93F5EF81-0064-43C2-BC71-55139DCCFBF4}.Debug|x86.ActiveCfg = Debug|Win32
+		{93F5EF81-0064-43C2-BC71-55139DCCFBF4}.Debug|x86.Build.0 = Debug|Win32
+		{93F5EF81-0064-43C2-BC71-55139DCCFBF4}.Release|x64.ActiveCfg = Release|x64
+		{93F5EF81-0064-43C2-BC71-55139DCCFBF4}.Release|x64.Build.0 = Release|x64
+		{93F5EF81-0064-43C2-BC71-55139DCCFBF4}.Release|x86.ActiveCfg = Release|Win32
+		{93F5EF81-0064-43C2-BC71-55139DCCFBF4}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F6734A34-4A65-41AC-A9CD-783631E356B1}
+	EndGlobalSection
+EndGlobal
