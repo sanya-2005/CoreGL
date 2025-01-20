@@ -20,6 +20,8 @@ namespace Win32
 	public:
 		bool Init() override;
 
+		Platforms GetPlatform() override;
+
 		void Dispose() override;
 
 		void SetFirstWindowStatus(bool firstWindowCreation);

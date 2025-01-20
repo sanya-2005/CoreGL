@@ -1,8 +1,5 @@
 #pragma once
 
-typedef unsigned int uint;
-typedef unsigned char uchar;
-
 #ifdef _WINDOWS
 
 #ifdef COREGL_PROJECT

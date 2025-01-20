@@ -9,7 +9,7 @@ namespace Win32
 	public:
 		bool Load() override;
 
-		bool Create(Window* window, PixelFormatInfo* pixelInfo, GLContextCreateInfo* contextCreateInfo) override;
+		bool Create(Window* window, PixelFormatInfo* pixelInfo, GLContextInfo* contextCreateInfo) override;
 
 		bool SetCurrent(Window* window) override;
 

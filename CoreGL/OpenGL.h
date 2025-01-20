@@ -1,8 +1,12 @@
 #pragma once
 #include "glTypes.h"
 
+#ifdef __cplusplus
 extern "C"
 {
+#endif // _cplusplus
+
+
 	GL_LOADER_EXPORT void glClearColor(GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha);
 
 	GL_LOADER_EXPORT void glViewport(GLint x, GLint y, GLsizei width, GLsizei height);
@@ -50,4 +54,13 @@ extern "C"
 	GL_LOADER_EXPORT void glGenVertexArrays(GLsizei n, GLuint* arrays);
 
 	GL_LOADER_EXPORT void glBindVertexArray(GLuint array);
+
+	GL_LOADER_EXPORT void glShaderBinary(GLsizei count, const GLuint* shaders, GLenum binaryFormat, const void* binary, GLsizei length);
+
+	GL_LOADER_EXPORT void glSpecializeShader(GLuint shader, const GLchar* pEntryPoint, GLuint numSpecializationConstants,
+											 const GLuint* pConstantIndex, const GLuint* pConstantValue);
+
+
+#ifdef __cplusplus
 }
+#endif // _cplusplus

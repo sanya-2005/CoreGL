@@ -1,6 +1,11 @@
 #pragma once
 #include "Window.h"
 
+constexpr GLCoreVersion glCoreVersion = 
+{
+	1, 1
+};
+
 class ARuntime
 {
 protected:
@@ -10,6 +15,8 @@ protected:
 
 public:
 	virtual bool Init() = 0;
+
+	virtual Platforms GetPlatform() = 0;
 
 	virtual void Dispose() = 0;
 

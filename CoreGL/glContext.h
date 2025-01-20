@@ -18,7 +18,7 @@ enum GLContextFlags
 	DebugFlag = 0x00000001
 };
 
-struct GLContextCreateInfo
+struct GLContextInfo
 {
 	int major;
 	int minor;
@@ -38,17 +38,21 @@ struct PixelFormatInfo
 	int colorBits;
 	int aplhaBits = 8;
 	int depthBits;
-	int stencilBits;
+	int stencilBits = 8;
 
 	bool enableMultisample = false;
-	int multisampleCount = 1;
+	int multisampleCount = 0;
 };
 
+#ifdef __cplusplus
 extern "C"
 {
+#endif // _cplusplus
+
+
 	GL_LOADER_EXPORT bool LoadGLContext();
 
-	GL_LOADER_EXPORT bool CreateGLContext(Window* window, PixelFormatInfo* pixelInfo, GLContextCreateInfo* contextCreateInfo);
+	GL_LOADER_EXPORT bool CreateGLContext(Window* window, PixelFormatInfo* pixelInfo, GLContextInfo* contextCreateInfo);
 
 	GL_LOADER_EXPORT bool LoadCoreGL();
 
@@ -57,4 +61,9 @@ extern "C"
 	GL_LOADER_EXPORT bool ResetContext();
 
 	GL_LOADER_EXPORT bool DeleteGLContext(Window* window);
+
+
+#ifdef __cplusplus
 }
+#endif // _cplusplus
+

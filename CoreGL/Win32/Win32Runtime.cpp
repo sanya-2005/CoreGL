@@ -6,6 +6,7 @@
 bool Win32::Win32Runtime::Init()
 {
 	firstWindowCreate = true;
+
 	// hInstance можно получить таким методом, не прибегая к аргументам из WinMain 
 	hinst = GetModuleHandleW(nullptr);
 	className = L"";
@@ -21,9 +22,17 @@ bool Win32::Win32Runtime::Init()
 	return true;
 }
 
+Platforms Win32::Win32Runtime::GetPlatform()
+{
+	return Platforms::Windows;
+}
+
 void Win32::Win32Runtime::Dispose()
 {
-	FreeLibrary(glLib);
+	if (glLib != nullptr)
+	{
+		FreeLibrary(glLib);
+	}
 
 	if (wglFunctions != nullptr)
 	{

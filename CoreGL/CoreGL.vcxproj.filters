@@ -21,9 +21,6 @@
     <ClCompile Include="Win32\Win32wglContext.cpp">
       <Filter>Win32</Filter>
     </ClCompile>
-    <ClCompile Include="Win32\Win32Window.cpp">
-      <Filter>Win32</Filter>
-    </ClCompile>
     <ClCompile Include="glContext.cpp" />
     <ClCompile Include="OpenGL.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -35,6 +32,9 @@
     <ClCompile Include="Win32\WglLoader.cpp">
       <Filter>Win32</Filter>
     </ClCompile>
+    <ClCompile Include="Win32\Win32WindowController.cpp">
+      <Filter>Win32</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Win32\wgl.h">
@@ -44,9 +44,6 @@
       <Filter>Win32</Filter>
     </ClInclude>
     <ClInclude Include="Win32\Win32wglContext.h">
-      <Filter>Win32</Filter>
-    </ClInclude>
-    <ClInclude Include="Win32\Win32Window.h">
       <Filter>Win32</Filter>
     </ClInclude>
     <ClInclude Include="glContext.h" />
@@ -69,5 +66,10 @@
       <Filter>Win32</Filter>
     </ClInclude>
     <ClInclude Include="glContextInternal.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="WindowController.h" />
+    <ClInclude Include="Win32\Win32WindowController.h">
+      <Filter>Win32</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -6,7 +6,7 @@ class IGLContext
 public:
 	virtual  bool Load() = 0;
 
-	virtual bool Create(Window* window, PixelFormatInfo* pixelInfo, GLContextCreateInfo* contextCreateInfo) = 0;
+	virtual bool Create(Window* window, PixelFormatInfo* pixelInfo, GLContextInfo* contextCreateInfo) = 0;
 
 	virtual bool SetCurrent(Window* window) = 0;
 

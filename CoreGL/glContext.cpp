@@ -4,6 +4,11 @@
 #include "glLoader.h"
 #include "Runtime.h"
 
+#ifdef _WINDOWS
+#include "Runtime.h"
+#include "Win32/Win32Runtime.h"
+#endif
+
 #include <iostream>
 
 using namespace glPrototypes;
@@ -23,10 +28,23 @@ bool LoadCoreGL()
 {
 	glFunctions = new GLFunctions();
 
+	// Невозможно загрузить функции OpenGL 1.1 через *GetAdressProc на Windows, так как они реализованы в opengl32.dll,
+	// и необходимо их грузить через обычную GetProcAdress.
+#ifdef _WINDOWS
+	Win32::Win32Runtime* win32Runtime = (Win32::Win32Runtime*)runtime;
+
+	glFunctions->glClearColorPtr = (glClearColorFunction)GetProcAddress(win32Runtime->GetglLibHandle(), "glClearColor");
+
+	glFunctions->glViewportPtr = (glViewportFunction)GetProcAddress(win32Runtime->GetglLibHandle(), "glViewport");
+
+	glFunctions->glClearPtr = (glClearFunction)GetProcAddress(win32Runtime->GetglLibHandle(), "glClear");
+#else
 	glFunctions->glClearColorPtr = GetGLAdressProc<glClearColorFunction>("glClearColor");
 
 	glFunctions->glViewportPtr = GetGLAdressProc<glViewportFunction>("glViewport");
+
 	glFunctions->glClearPtr = GetGLAdressProc<glClearFunction>("glClear");
+#endif // _WINDOWS
 
 	glFunctions->glGenBuffersPtr = GetGLAdressProc<glGenBuffersFuncion>("glGenBuffers");
 	glFunctions->glBindBufferPtr = GetGLAdressProc<glBindBufferFunction>("glBindBuffer");
@@ -54,10 +72,13 @@ bool LoadCoreGL()
 	glFunctions->glDrawArraysPtr = GetGLAdressProc<glDrawArraysFunction>("glDrawArrays");
 	glFunctions->glDrawElementsPtr = GetGLAdressProc<glDrawElementsFunction>("glDrawElements");
 
+	glFunctions->glShaderBinaryPtr = GetGLAdressProc<glShaderBinaryFunction>("glShaderBinary");
+	glFunctions->glSpecializeShaderPtr = GetGLAdressProc<glSpecializeShaderFunction>("glSpecializeShader");
+
     return true;
 }
 
-bool CreateGLContext(Window* window, PixelFormatInfo* pixelInfo, GLContextCreateInfo* contextCreateInfo)
+bool CreateGLContext(Window* window, PixelFormatInfo* pixelInfo, GLContextInfo* contextCreateInfo)
 {
 	if (runtime->GetContextState() == false)
 	{

@@ -29,7 +29,12 @@ namespace glPrototypes
 
 	typedef void (GL_API glDrawArraysFunction) (GLenum mode, GLint first, GLsizei count);
 	typedef void (GL_API glDrawElementsFunction) (GLenum mode, GLsizei count, GLenum type, const void* indices);
+
+		typedef void (GL_API glShaderBinaryFunction) (GLsizei count, const GLuint* shaders, GLenum binaryFormat, const void* binary, GLsizei length);
+		typedef void (GL_API glSpecializeShaderFunction) (GLuint shader, const GLchar* pEntryPoint, GLuint numSpecializationConstants, 
+														  const GLuint* pConstantIndex, const GLuint* pConstantValue);
 }
+
 
 struct GLFunctions
 {
@@ -62,6 +67,9 @@ struct GLFunctions
 	glPrototypes::glUseProgramFunction glUseProgramPtr;
 	glPrototypes::glDrawArraysFunction glDrawArraysPtr;
 	glPrototypes::glDrawElementsFunction glDrawElementsPtr;
+
+	glPrototypes::glShaderBinaryFunction glShaderBinaryPtr;
+	glPrototypes::glSpecializeShaderFunction glSpecializeShaderPtr;
 };
 
 extern GLFunctions* glFunctions;

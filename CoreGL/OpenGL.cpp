@@ -122,3 +122,13 @@ void glBindVertexArray(GLuint array)
 {
 	glFunctions->glBindVertexArrayPtr(array);
 }
+
+void glShaderBinary(GLsizei count, const GLuint* shaders, GLenum binaryFormat, const void* binary, GLsizei length)
+{
+	glFunctions->glShaderBinaryPtr(count, shaders, binaryFormat, binary, length);
+}
+
+void glSpecializeShader(GLuint shader, const GLchar* pEntryPoint, GLuint numSpecializationConstants, const GLuint* pConstantIndex, const GLuint* pConstantValue)
+{
+	glFunctions->glSpecializeShaderPtr(shader, pEntryPoint, numSpecializationConstants, pConstantIndex, pConstantValue);
+}

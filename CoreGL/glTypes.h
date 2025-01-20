@@ -3,14 +3,14 @@
 #include "KHR/khrplatform.h"
 
 typedef float GLfloat;
-typedef uint GLenum;
+typedef unsigned int GLenum;
 typedef int GLsizei;
 typedef int GLint;
-typedef uint GLuint;
-typedef uint GLbitfield;
+typedef unsigned int GLuint;
+typedef unsigned int GLbitfield;
 typedef char GLchar;
 typedef khronos_ssize_t GLsizeiptr;
-typedef uchar GLboolean;
+typedef unsigned char GLboolean;
 
 #define GL_TRUE                           1
 #define GL_FALSE                          0
@@ -76,3 +76,5 @@ typedef uchar GLboolean;
 
 #define GL_COMPILE_STATUS                 0x8B81
 #define GL_LINK_STATUS                    0x8B82
+
+#define GL_SHADER_BINARY_FORMAT_SPIR_V_ARB 0x9551

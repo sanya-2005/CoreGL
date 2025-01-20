@@ -1,7 +1,9 @@
 #include "Win32wglContext.h"
-#include "Win32Window.h"
+#include "Win32WindowController.h"
+#include "../WindowInternal.h"
 #include "Win32Runtime.h"
 #include "wgl.h"
+#include <iostream>
 
 namespace Win32
 {
@@ -78,11 +80,11 @@ namespace Win32
 		return true;
 	}
 
-	bool WglContext::Create(Window* window, PixelFormatInfo* pixelInfo, GLContextCreateInfo* contextCreateInfo)
+	bool WglContext::Create(Window* window, PixelFormatInfo* pixelInfo, GLContextInfo* contextCreateInfo)
 	{
 		Win32WindowData* data = (Win32WindowData*)window->platformData;
 
-		const int pixelAttribs[] =
+		int pixelAttribs[] =
 		{
 			WGL_DRAW_TO_WINDOW_ARB, GL_TRUE,
 			WGL_SUPPORT_OPENGL_ARB, GL_TRUE,
@@ -95,7 +97,7 @@ namespace Win32
 			WGL_STENCIL_BITS_ARB, pixelInfo->stencilBits,
 			WGL_SAMPLE_BUFFERS_ARB, (int)pixelInfo->enableMultisample,
 			WGL_SAMPLES_ARB, pixelInfo->multisampleCount,
-			0
+			0, 0
 		};
 
 		int pixelFormatID;
@@ -105,6 +107,12 @@ namespace Win32
 
 		if (status != true)
 		{
+			return false;
+		}
+
+		if (numFormats == 0)
+		{
+			std::cout << "Error choose Pixel Format" << std::endl;
 			return false;
 		}
 
@@ -123,6 +131,12 @@ namespace Win32
 		};
 
 		data->glContext = CreateContextAttribsARB(data->context, 0, contextAttribs);
+
+		if (data->glContext == nullptr)
+		{
+			std::cout << "WglContext::Create - Error create Wgl Context" << std::endl;
+			return false;
+		}
 
 		return true;
 	}

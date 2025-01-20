@@ -29,7 +29,7 @@
     <ClCompile Include="Win32\Win32Runtime.cpp" />
     <ClCompile Include="Win32\Win32Utils.cpp" />
     <ClCompile Include="Win32\Win32wglContext.cpp" />
-    <ClCompile Include="Win32\Win32Window.cpp" />
+    <ClCompile Include="Win32\Win32WindowController.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -38,6 +38,7 @@
     <ClInclude Include="glDefines.h" />
     <ClInclude Include="glLoader.h" />
     <ClInclude Include="glTypes.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="OpenGL.h" />
     <ClInclude Include="PlatformSelector.h" />
     <ClInclude Include="Types.h" />
@@ -47,8 +48,9 @@
     <ClInclude Include="Win32\Win32Runtime.h" />
     <ClInclude Include="Win32\Win32Utils.h" />
     <ClInclude Include="Win32\Win32wglContext.h" />
-    <ClInclude Include="Win32\Win32Window.h" />
+    <ClInclude Include="Win32\Win32WindowController.h" />
     <ClInclude Include="Window.h" />
+    <ClInclude Include="WindowController.h" />
     <ClInclude Include="WindowInternal.h" />
     <ClInclude Include="Runtime.h" />
   </ItemGroup>
